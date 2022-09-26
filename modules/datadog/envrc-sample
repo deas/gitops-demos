@@ -1,0 +1,2 @@
+export DD_HOST=https://api.datadoghq.eu
+eval $(aws secretsmanager get-secret-value --secret-id datadog-env --query SecretString --output text | jq -r 'keys[] as $k | "export \($k)=\(.[$k])"')
