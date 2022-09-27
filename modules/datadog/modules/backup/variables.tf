@@ -1,13 +1,6 @@
-variable "datadog_api_url" {
-  default = "https://api.datadoghq.com/"
-}
-
-variable "datadog_api_key" {
-  default = ""
-}
-
-variable "datadog_app_key" {
-  default = ""
+variable "env" {
+  description = "Environment"
+  default     = "production"
 }
 
 variable "service_name" {
