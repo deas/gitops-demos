@@ -7,13 +7,12 @@ terraform {
   }
 }
 
-# Datadog
-# provider "datadog" {
-#   version = "2.8.0"
-#   api_url = var.datadog_api_url
-#   api_key = var.datadog_api_key
-#   app_key = var.datadog_app_key
-# }
+provider "datadog" {
+  #   version = "2.8.0"
+  #   api_url = var.datadog_api_url
+  #   api_key = var.datadog_api_key
+  #   app_key = var.datadog_app_key
+}
 
 module "backup" {
   source       = "./modules/backup"
@@ -45,4 +44,10 @@ module "systems" {
     email = "@john@doe.com @john@smith.com"
     slack = "@slack-my_channel"
   }
+}
+
+resource "datadog_dashboard_json" "flux" {
+  dashboard = templatefile("${path.module}/assets/dashboard-flux.json", {
+    env = var.env
+  })
 }

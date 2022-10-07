@@ -3,8 +3,14 @@ variable "datadog_api_url" {
   # "https://api.datadoghq.com/"
 }
 
+variable "env" {
+  type    = string
+  default = "todo"
+}
+
 variable "main_tags" {
-  default = "env:testing"
+  type    = string
+  default = "env:todo"
 }
 
 variable "notifications" {
