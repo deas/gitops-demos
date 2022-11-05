@@ -6,4 +6,4 @@
 
 # Include terraform directories
 !/modules/
-/modules/**/backend.tf
+# /modules/**/backend.tf

@@ -1,3 +1,4 @@
+/*
 terraform {
   # We want this overriden by tf-controller
   backend "s3" {
@@ -11,3 +12,4 @@ terraform {
 
   required_version = ">= 0.12.26"
 }
+*/
